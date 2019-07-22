@@ -1,4 +1,4 @@
-def encode_docuement(data):
+def encode_document(data):
     if isinstance(data, list):
         for item in data:
             item['_id'] = str(item['_id'])
@@ -19,4 +19,4 @@ if __name__ == '__main__':
         'price': 145000000,
         'image': 'https://www.distoyota.com/sites/default/files/2018-09/prado-tres.jpg'}]
 
-    print(encode_docuement(data))
+    print(encode_document(data))

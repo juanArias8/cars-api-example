@@ -22,7 +22,9 @@ def get_car_by_id(_id: str):
 
 def save_car(car):
     try:
-        current_app.cars_collection.insert_one(car)
+        car.pop('_id')
+        car['sold'] = False
+        current_app.cars_collection.insert(car)
     except Exception as e:
         print(e)
 

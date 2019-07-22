@@ -2,7 +2,7 @@ from flask import jsonify
 from flask_restful import Resource
 
 from api.controller.helpers.car import car_parse
-from api.controller.helpers.utils import encode_docuement
+from api.controller.helpers.utils import encode_document
 from api.repository import car
 
 
@@ -17,7 +17,7 @@ class Car(Resource):
             data = None
             success = False
 
-        return jsonify({'success': success, 'data': encode_docuement(data)})
+        return jsonify({'success': success, 'data': encode_document(data)})
 
     def post(self):
         data = car_parse.parse_args()
@@ -63,4 +63,4 @@ class CarList(Resource):
             data = None
             success = False
 
-        return jsonify({'success': success, 'data': encode_docuement(data)})
+        return jsonify({'success': success, 'data': encode_document(data)})
